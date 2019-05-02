@@ -3,40 +3,69 @@ package pe.edu.cibertec.dominio;
 public class Autor {
 
 	private int idAutor;
-	private String strNombre;
-	private String strPais;
-	private String strBiografia;
+	private String nombre;
+	private String apellidoPaterno;
+	private String apellidoMaterno;
+	private String nacionalidad;
+	private String biografia;
 	
-	public Autor(int idAutor, String strNombre, String strPais, String strBiografia) {		
+	public Autor(int idAutor, String nombre, String apellidoPaterno, String apellidoMaterno, String nacionalidad,
+			String biografia) {
+		super();
 		this.idAutor = idAutor;
-		this.strNombre = strNombre;
-		this.strPais = strPais;
-		this.strBiografia = strBiografia;
+		this.nombre = nombre;
+		this.apellidoPaterno = apellidoPaterno;
+		this.apellidoMaterno = apellidoMaterno;
+		this.nacionalidad = nacionalidad;
+		this.biografia = biografia;
 	}
-	
+
 	public int getIdAutor() {
 		return idAutor;
 	}
+
 	public void setIdAutor(int idAutor) {
 		this.idAutor = idAutor;
 	}
-	public String getStrNombre() {
-		return strNombre;
+
+	public String getNombre() {
+		return nombre;
 	}
-	public void setStrNombre(String strNombre) {
-		this.strNombre = strNombre;
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-	public String getStrPais() {
-		return strPais;
+
+	public String getApellidoPaterno() {
+		return apellidoPaterno;
 	}
-	public void setStrPais(String strPais) {
-		this.strPais = strPais;
+
+	public void setApellidoPaterno(String apellidoPaterno) {
+		this.apellidoPaterno = apellidoPaterno;
 	}
-	public String getStrBiografia() {
-		return strBiografia;
+
+	public String getApellidoMaterno() {
+		return apellidoMaterno;
 	}
-	public void setStrBiografia(String strBiografia) {
-		this.strBiografia = strBiografia;
+
+	public void setApellidoMaterno(String apellidoMaterno) {
+		this.apellidoMaterno = apellidoMaterno;
 	}
+
+	public String getNacionalidad() {
+		return nacionalidad;
+	}
+
+	public void setNacionalidad(String nacionalidad) {
+		this.nacionalidad = nacionalidad;
+	}
+
+	public String getBiografia() {
+		return biografia;
+	}
+
+	public void setBiografia(String biografia) {
+		this.biografia = biografia;
+	}	
 	
 }

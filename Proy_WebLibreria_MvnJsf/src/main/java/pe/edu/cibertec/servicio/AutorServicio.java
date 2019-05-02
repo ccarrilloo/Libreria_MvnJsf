@@ -8,10 +8,12 @@ public class AutorServicio {
 
 	public List<Autor> obtenerAutor() {
 		
+		System.out.println("Obtener Lista");
+		
 		return Arrays.asList(
-				new Autor(1, "John Ronald Reuel Tolkien", "SudAfrica",""),
-				new Autor(2, "Joane K. Rowling", "Inglaterra",""),
-				new Autor(3, "George Raymond Richard Martin", "Estados Unidos","")
+				new Autor(1, "John Ronald","Reuel","Tolkien", "SudAfrica",""),
+				new Autor(2, "Joane K.","Rowling","", "Inglaterra",""),
+				new Autor(3, "George Raymond","Richard","Martin", "Estados Unidos","")
 				);
 		
 	}
