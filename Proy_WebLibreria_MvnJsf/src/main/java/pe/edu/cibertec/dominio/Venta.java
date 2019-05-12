@@ -2,8 +2,11 @@ package pe.edu.cibertec.dominio;
 
 import java.util.Date;
 
-public class Venta {
+public class Venta extends Entidad {
 
+	public Venta() {		
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;

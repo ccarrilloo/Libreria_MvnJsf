@@ -1,40 +1,46 @@
 package pe.edu.cibertec.jsf.beans;
 
 import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.view.ViewScoped;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.ViewScoped;
 
 import pe.edu.cibertec.dominio.Autor;
 import pe.edu.cibertec.servicio.AutorServicio;
 
+@ManagedBean(name="AutorBean")
+//@ManagedBean
 @ViewScoped
-@ManagedBean(name ="AutorBean")
-public class AutorBean {
+public class AutorBean{
+
+	@ManagedProperty(value="#{configuracionAppBean}")
+	private ConfiguracionAppBean configuracionAppBean;
+	
+	public ConfiguracionAppBean getConfiguracionAppBean() {
+		return configuracionAppBean;
+	}
+	public void setConfiguracionAppBean(ConfiguracionAppBean configuracionAppBean) {
+		this.configuracionAppBean = configuracionAppBean;
+	}
 
 	private List<Autor> listaAutores;
-	
-	@PostConstruct
-	private void init() {
-		// TODO Auto-generated method stub
-		AutorServicio autorServicio = new AutorServicio(); 
-		listaAutores = autorServicio.obtenerAutor();
-
-		System.out.println("postconstruct autorbean");
-	}
-	
-	public AutorBean() {		
-		System.out.println("Creando instancia de AutorBean");
-	}
-
 	public List<Autor> getListaAutores() {
 		return listaAutores;
 	}
-	
 	public void setListaAutores(List<Autor> listaAutores) {
 		this.listaAutores = listaAutores;
 	}
+
 	
+	public AutorBean() {		
+		// TODO Auto-generated constructor stub
+	}
+	
+	@PostConstruct
+	private void init() {		
+		AutorServicio autorServicio = configuracionAppBean.getAutorServicio();
+		listaAutores = autorServicio.obtenerProductos();		
+	}
 	
 }

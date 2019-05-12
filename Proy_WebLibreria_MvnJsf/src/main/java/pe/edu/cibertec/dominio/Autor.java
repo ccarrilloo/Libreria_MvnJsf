@@ -1,71 +1,46 @@
 package pe.edu.cibertec.dominio;
 
-public class Autor {
+public class Autor extends Entidad {
 
 	private int idAutor;
-	private String nombre;
-	private String apellidoPaterno;
-	private String apellidoMaterno;
-	private String nacionalidad;
-	private String biografia;
+	private String strNombre;
+	private String strPais;
+	private String strBiografia;
 	
-	public Autor(int idAutor, String nombre, String apellidoPaterno, String apellidoMaterno, String nacionalidad,
-			String biografia) {
-		super();
-		this.idAutor = idAutor;
-		this.nombre = nombre;
-		this.apellidoPaterno = apellidoPaterno;
-		this.apellidoMaterno = apellidoMaterno;
-		this.nacionalidad = nacionalidad;
-		this.biografia = biografia;
+	public Autor() {
+		// TODO Auto-generated constructor stub
 	}
 
+	public Autor(int idAutor, String strNombre, String strPais, String strBiografia) {		
+		this.idAutor = idAutor;
+		this.strNombre = strNombre;
+		this.strPais = strPais;
+		this.strBiografia = strBiografia;
+	}
+	
 	public int getIdAutor() {
 		return idAutor;
 	}
-
 	public void setIdAutor(int idAutor) {
 		this.idAutor = idAutor;
 	}
-
-	public String getNombre() {
-		return nombre;
+	public String getStrNombre() {
+		return strNombre;
 	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setStrNombre(String strNombre) {
+		this.strNombre = strNombre;
 	}
-
-	public String getApellidoPaterno() {
-		return apellidoPaterno;
+	public String getStrPais() {
+		return strPais;
 	}
-
-	public void setApellidoPaterno(String apellidoPaterno) {
-		this.apellidoPaterno = apellidoPaterno;
+	public void setStrPais(String strPais) {
+		this.strPais = strPais;
 	}
-
-	public String getApellidoMaterno() {
-		return apellidoMaterno;
+	public String getStrBiografia() {
+		return strBiografia;
 	}
-
-	public void setApellidoMaterno(String apellidoMaterno) {
-		this.apellidoMaterno = apellidoMaterno;
+	public void setStrBiografia(String strBiografia) {
+		this.strBiografia = strBiografia;
 	}
-
-	public String getNacionalidad() {
-		return nacionalidad;
-	}
-
-	public void setNacionalidad(String nacionalidad) {
-		this.nacionalidad = nacionalidad;
-	}
-
-	public String getBiografia() {
-		return biografia;
-	}
-
-	public void setBiografia(String biografia) {
-		this.biografia = biografia;
-	}	
 	
 }

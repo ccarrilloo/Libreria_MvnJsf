@@ -2,7 +2,11 @@ package pe.edu.cibertec.dominio;
 
 import pe.edu.cibertec.dominio.Clasificacion;
 
-public class Libro {
+public class Libro extends Entidad {
+
+	public Libro() {		
+		// TODO Auto-generated constructor stub
+	}
 
 	private int idIdLibro;
 	private int idAutor;

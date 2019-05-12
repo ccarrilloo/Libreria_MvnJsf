@@ -2,7 +2,11 @@ package pe.edu.cibertec.dominio;
 
 import java.util.Date;
 
-public class DetalleVenta {
+public class DetalleVenta extends Entidad {
+
+	public DetalleVenta() {		
+		// TODO Auto-generated constructor stub
+	}
 
 	private int idVenta;
 	private int idDetVenta;

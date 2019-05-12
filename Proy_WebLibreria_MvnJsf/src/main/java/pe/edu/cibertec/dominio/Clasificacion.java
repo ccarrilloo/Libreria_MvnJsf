@@ -1,10 +1,14 @@
 package pe.edu.cibertec.dominio;
 
-public class Clasificacion {
+public class Clasificacion extends Entidad {
 
 	private int idClasificacion;
 	private String descClasificacion;
 	
+	public Clasificacion() {		
+		// TODO Auto-generated constructor stub
+	}
+
 	public Clasificacion(int idClasificacion, String descClasificacion) {
 		super();
 		this.idClasificacion = idClasificacion;

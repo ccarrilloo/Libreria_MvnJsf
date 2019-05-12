@@ -4,8 +4,12 @@ import java.util.Date;
 
 import pe.edu.cibertec.dominio.TipoDocumento;
 
-public class Cliente {
+public class Cliente extends Entidad {
 	
+	public Cliente() {
+		// TODO Auto-generated constructor stub
+	}
+
 	private  int idCliente;
 	private  String nombre;
 	private  String apellidoPat;
