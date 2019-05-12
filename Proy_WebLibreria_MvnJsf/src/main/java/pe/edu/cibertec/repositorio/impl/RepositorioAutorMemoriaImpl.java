@@ -3,6 +3,7 @@ package pe.edu.cibertec.repositorio.impl;
 import java.util.List;
 
 import pe.edu.cibertec.dominio.Autor;
+
 import pe.edu.cibertec.repositorio.RepositorioAutor;
 
 public class RepositorioAutorMemoriaImpl implements RepositorioAutor {
@@ -28,6 +29,11 @@ public class RepositorioAutorMemoriaImpl implements RepositorioAutor {
 	public List<Autor> obtenerTodos() {
 		// TODO Auto-generated method stub
 		return datos.obtenerTodos();
+	}
+	
+	@Override
+	public Autor obtenerPorId(Integer id) {
+		return datos.obtenerPorId(id);
 	}
 
 }

@@ -10,7 +10,7 @@ public class Cliente extends Entidad {
 		// TODO Auto-generated constructor stub
 	}
 
-	private  int idCliente;
+	
 	private  String nombre;
 	private  String apellidoPat;
 	private  String apellidoMat;
@@ -18,10 +18,10 @@ public class Cliente extends Entidad {
 	private  TipoDocumento tipoDocumento;
 	private  String documento;
 	
-	public Cliente(int idCliente, String nombre, String apellidoPat, String apellidoMat, Date fecNacimiento,
+	public Cliente(int id, String nombre, String apellidoPat, String apellidoMat, Date fecNacimiento,
 			TipoDocumento tipoDocumento, String documento) {
 		super();
-		this.idCliente = idCliente;
+		this.id = id;
 		this.nombre = nombre;
 		this.apellidoPat = apellidoPat;
 		this.apellidoMat = apellidoMat;
@@ -29,15 +29,7 @@ public class Cliente extends Entidad {
 		this.tipoDocumento = tipoDocumento;
 		this.documento = documento;
 	}
-
-	public int getIdCliente() {
-		return idCliente;
-	}
-
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
-	}
-
+	
 	public String getNombre() {
 		return nombre;
 	}

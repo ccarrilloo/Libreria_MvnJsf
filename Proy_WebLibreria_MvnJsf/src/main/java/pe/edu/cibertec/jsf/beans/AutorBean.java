@@ -10,7 +10,6 @@ import pe.edu.cibertec.dominio.Autor;
 import pe.edu.cibertec.servicio.AutorServicio;
 
 @ManagedBean(name="AutorBean")
-//@ManagedBean
 @ViewScoped
 public class AutorBean{
 
@@ -26,6 +25,7 @@ public class AutorBean{
 
 	private List<Autor> listaAutores;
 	public List<Autor> getListaAutores() {
+		System.out.println("obtener listaAutores");
 		return listaAutores;
 	}
 	public void setListaAutores(List<Autor> listaAutores) {

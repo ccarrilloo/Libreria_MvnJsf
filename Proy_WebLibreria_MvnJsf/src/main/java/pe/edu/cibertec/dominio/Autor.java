@@ -2,7 +2,7 @@ package pe.edu.cibertec.dominio;
 
 public class Autor extends Entidad {
 
-	private int idAutor;
+	//private int idAutor;
 	private String strNombre;
 	private String strPais;
 	private String strBiografia;
@@ -11,19 +11,13 @@ public class Autor extends Entidad {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Autor(int idAutor, String strNombre, String strPais, String strBiografia) {		
-		this.idAutor = idAutor;
+	public Autor(int id, String strNombre, String strPais, String strBiografia) {		
+		this.id = id;
 		this.strNombre = strNombre;
 		this.strPais = strPais;
 		this.strBiografia = strBiografia;
 	}
-	
-	public int getIdAutor() {
-		return idAutor;
-	}
-	public void setIdAutor(int idAutor) {
-		this.idAutor = idAutor;
-	}
+		
 	public String getStrNombre() {
 		return strNombre;
 	}

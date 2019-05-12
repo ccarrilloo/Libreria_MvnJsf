@@ -10,12 +10,12 @@
 	<h2>Lista de Autores</h2>
 	<div>
 		<h2>#{msjs.tienda_mensaje}</h2>
-		<h:link outcome="autor/crear">Crear producto</h:link>
+		<h:link outcome="autor/crearAutor">Crear Autor</h:link>
 	</div>
 	<h:dataTable value="#{AutorBean.listaAutores}" var="autor">
 		<h:column>
 			<f:facet name="header">Id</f:facet>
-			#{autor.idAutor}
+			#{autor.id}
 		</h:column>
 		<h:column>
 			<f:facet name="header">Nombre</f:facet>
