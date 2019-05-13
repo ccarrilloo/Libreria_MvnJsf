@@ -1,7 +1,6 @@
 package pe.edu.cibertec.dominio;
 
 public class Clasificacion extends Entidad {
-
 	
 	private String descClasificacion;
 	
@@ -17,7 +16,6 @@ public class Clasificacion extends Entidad {
 	public String getDescClasificacion() {
 		return descClasificacion;
 	}
-
 	public void setDescClasificacion(String descClasificacion) {
 		this.descClasificacion = descClasificacion;
 	}

@@ -8,60 +8,36 @@ public class Libro extends Entidad {
 		// TODO Auto-generated constructor stub
 	}
 
-	private int idIdLibro;
-	private int idAutor;
 	private String titulo;
-	private String strAutor;
-	private String strClaBib;
 	private String strFecPub;
 	private String strDescri;
-	private Clasificacion oClasificacion;
+	private Clasificacion clasificacion;
+	private Autor autor;
 	private double precio;
+	
+	public Libro(int id,String titulo, String strFecPub, String strDescri, Clasificacion clasificacion,
+			Autor autor, double precio) {
 
-	public Libro(int idIdLibro, int idAutor, String titulo, String strAutor, String strClaBib, String strFecPub,
-			String strDescri, Clasificacion oClasificacion, double precio) {
-		
-		this.idIdLibro = idIdLibro;
-		this.idAutor = idAutor;
-		this.titulo = titulo;
-		this.strAutor = strAutor;
-		this.strClaBib = strClaBib;
+		this.id = id;
+		this.titulo = titulo;	
 		this.strFecPub = strFecPub;
 		this.strDescri = strDescri;
-		this.oClasificacion = oClasificacion;
+		this.clasificacion = clasificacion;
+		this.autor = autor;
 		this.precio = precio;
 	}
-
-	public int getIdIdLibro() {
-		return idIdLibro;
+	public Autor getAutor() {
+		return autor;
 	}
-	public void setIdIdLibro(int idIdLibro) {
-		this.idIdLibro = idIdLibro;
-	}
-	public int getIdAutor() {
-		return idAutor;
-	}
-	public void setIdAutor(int idAutor) {
-		this.idAutor = idAutor;
+	public void setAutor(Autor autor) {
+		this.autor = autor;
 	}
 	public String getTitulo() {
 		return titulo;
 	}
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
-	}
-	public String getStrAutor() {
-		return strAutor;
-	}
-	public void setStrAutor(String strAutor) {
-		this.strAutor = strAutor;
-	}
-	public String getStrClaBib() {
-		return strClaBib;
-	}
-	public void setStrClaBib(String strClaBib) {
-		this.strClaBib = strClaBib;
-	}
+	}	
 	public String getStrFecPub() {
 		return strFecPub;
 	}
@@ -74,11 +50,11 @@ public class Libro extends Entidad {
 	public void setStrDescri(String strDescri) {
 		this.strDescri = strDescri;
 	}
-	public Clasificacion getoClasificacion() {
-		return oClasificacion;
+	public Clasificacion getclasificacion() {
+		return clasificacion;
 	}
-	public void setoClasificacion(Clasificacion oClasificacion) {
-		this.oClasificacion = oClasificacion;
+	public void setclasificacion(Clasificacion clasificacion) {
+		this.clasificacion = clasificacion;
 	}
 	public double getPrecio() {
 		return precio;
@@ -91,11 +67,7 @@ public class Libro extends Entidad {
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int result = 1;
-		result = prime * result + idAutor;
-		result = prime * result + idIdLibro;
-		result = prime * result + ((strAutor == null) ? 0 : strAutor.hashCode());
-		result = prime * result + ((strClaBib == null) ? 0 : strClaBib.hashCode());
+		int result = 1;		
 		result = prime * result + ((strDescri == null) ? 0 : strDescri.hashCode());
 		result = prime * result + ((strFecPub == null) ? 0 : strFecPub.hashCode());
 		result = prime * result + ((titulo == null) ? 0 : titulo.hashCode());
@@ -110,21 +82,7 @@ public class Libro extends Entidad {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Libro other = (Libro) obj;
-		if (idAutor != other.idAutor)
-			return false;
-		if (idIdLibro != other.idIdLibro)
-			return false;
-		if (strAutor == null) {
-			if (other.strAutor != null)
-				return false;
-		} else if (!strAutor.equals(other.strAutor))
-			return false;
-		if (strClaBib == null) {
-			if (other.strClaBib != null)
-				return false;
-		} else if (!strClaBib.equals(other.strClaBib))
-			return false;
+		Libro other = (Libro) obj;				
 		if (strDescri == null) {
 			if (other.strDescri != null)
 				return false;

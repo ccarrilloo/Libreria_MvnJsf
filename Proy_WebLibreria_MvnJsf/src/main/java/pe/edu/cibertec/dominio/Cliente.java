@@ -1,24 +1,17 @@
 package pe.edu.cibertec.dominio;
 
-import java.util.Date;
-
 import pe.edu.cibertec.dominio.TipoDocumento;
 
 public class Cliente extends Entidad {
 	
-	public Cliente() {
-		// TODO Auto-generated constructor stub
-	}
-
-	
 	private  String nombre;
 	private  String apellidoPat;
 	private  String apellidoMat;
-	private  Date fecNacimiento;
+	private  String fecNacimiento;
 	private  TipoDocumento tipoDocumento;
 	private  String documento;
 	
-	public Cliente(int id, String nombre, String apellidoPat, String apellidoMat, Date fecNacimiento,
+	public Cliente(int id, String nombre, String apellidoPat, String apellidoMat, String fecNacimiento,
 			TipoDocumento tipoDocumento, String documento) {
 
 		this.id = id;
@@ -30,6 +23,12 @@ public class Cliente extends Entidad {
 		this.documento = documento;
 	}
 	
+
+	public Cliente() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -54,14 +53,12 @@ public class Cliente extends Entidad {
 		this.apellidoMat = apellidoMat;
 	}
 
-	public Date getFecNacimiento() {
+	public String getFecNacimiento() {
 		return fecNacimiento;
 	}
-
-	public void setFecNacimiento(Date fecNacimiento) {
+	public void setFecNacimiento(String fecNacimiento) {
 		this.fecNacimiento = fecNacimiento;
 	}
-
 	public TipoDocumento getTipoDocumento() {
 		return tipoDocumento;
 	}

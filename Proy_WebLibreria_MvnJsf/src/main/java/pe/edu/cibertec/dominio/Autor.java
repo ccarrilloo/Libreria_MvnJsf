@@ -2,7 +2,6 @@ package pe.edu.cibertec.dominio;
 
 public class Autor extends Entidad {
 
-	//private int idAutor;
 	private String nombre;
 	private String pais;
 	private String biografia;

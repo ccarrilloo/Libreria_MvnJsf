@@ -2,6 +2,7 @@ package pe.edu.cibertec.repositorio.impl;
 
 import java.util.List;
 
+import pe.edu.cibertec.dominio.Autor;
 import pe.edu.cibertec.dominio.Clasificacion;
 import pe.edu.cibertec.dominio.Libro;
 import pe.edu.cibertec.repositorio.RepositorioLibro;
@@ -12,10 +13,19 @@ public class RepositorioLibroMemoriaImpl implements RepositorioLibro {
 	
 	public RepositorioLibroMemoriaImpl() {
 		datos = new RepositorioMemoria<Libro>();
-		agregar(new Libro(1, 1, "El regreso de Beorhtnoth, hijo de Beorhthelm",
-				"John Ronald Reuel Tolkien","","","",new Clasificacion(1,"Ficción histórica"),10));
-		agregar(new Libro(1, 1, "El Hobbit",
-				"John Ronald Reuel Tolkien","","","",new Clasificacion(2,"Épico"),10));
+
+		agregar(new Libro(1, 
+				 		  "El regreso de Beorhtnoth, hijo de Beorhthelm",						  
+						  "07/05/1970","",
+						  new Clasificacion(1,"Ficción histórica"),
+						  new Autor(1, "John Ronald Reuel Tolkien", "SudAfrica",""),
+						  10.00));
+		agregar(new Libro(2,
+						  "El Hobbit",						 
+						  "08/08/1960","",
+						  new Clasificacion(2,"Épico"),
+						  new Autor(1, "John Ronald Reuel Tolkien", "SudAfrica",""),
+						  50.00));
 	}
 
 	@Override
