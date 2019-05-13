@@ -13,7 +13,7 @@ public class RepositorioAutorMemoriaImpl implements RepositorioAutor {
 	public RepositorioAutorMemoriaImpl() {
 		super();
 		datos = new RepositorioMemoria<Autor>();
-		agregar(new Autor(1,"John Ronald Reuel Tolkien","Sudafrica",""));
+		agregar(new Autor(1, "John Ronald Reuel Tolkien", "SudAfrica",""));
 		agregar(new Autor(2,"Joane K. Rowling","Inglaterra",""));
 		agregar(new Autor(3,"George Raymond Richard Martin","Estados Unidos",""));
 		

@@ -3,38 +3,43 @@ package pe.edu.cibertec.dominio;
 public class Autor extends Entidad {
 
 	//private int idAutor;
-	private String strNombre;
-	private String strPais;
-	private String strBiografia;
+	private String nombre;
+	private String pais;
+	private String biografia;
 	
 	public Autor() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Autor(int id, String strNombre, String strPais, String strBiografia) {		
+	public Autor(int id, String nombre, String pais, String biografia) {		
 		this.id = id;
-		this.strNombre = strNombre;
-		this.strPais = strPais;
-		this.strBiografia = strBiografia;
+		this.nombre = nombre;
+		this.pais = pais;
+		this.biografia = biografia;
 	}
 		
-	public String getStrNombre() {
-		return strNombre;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setStrNombre(String strNombre) {
-		this.strNombre = strNombre;
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-	public String getStrPais() {
-		return strPais;
+
+	public String getPais() {
+		return pais;
 	}
-	public void setStrPais(String strPais) {
-		this.strPais = strPais;
+
+	public void setPais(String pais) {
+		this.pais = pais;
 	}
-	public String getStrBiografia() {
-		return strBiografia;
+
+	public String getBiografia() {
+		return biografia;
 	}
-	public void setStrBiografia(String strBiografia) {
-		this.strBiografia = strBiografia;
-	}
+
+	public void setBiografia(String biografia) {
+		this.biografia = biografia;
+	}	
 	
 }

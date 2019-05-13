@@ -8,8 +8,8 @@ import javax.faces.bean.RequestScoped;
 import pe.edu.cibertec.dominio.Autor;
 import pe.edu.cibertec.servicio.AutorServicio;
 
-//@ManagedBean(name="AutorCrearBean")
-@ManagedBean
+@ManagedBean(name="AutorCrearBean")
+//@ManagedBean
 @RequestScoped
 public class AutorCrearBean {
 	
