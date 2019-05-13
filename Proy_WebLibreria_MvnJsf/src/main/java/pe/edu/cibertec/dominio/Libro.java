@@ -16,12 +16,11 @@ public class Libro extends Entidad {
 	private String strFecPub;
 	private String strDescri;
 	private Clasificacion oClasificacion;
-	private Autor oAutor;
 	private double precio;
 
 	public Libro(int idIdLibro, int idAutor, String titulo, String strAutor, String strClaBib, String strFecPub,
-			String strDescri, Clasificacion oClasificacion, Autor oAutor, double precio) {
-		super();
+			String strDescri, Clasificacion oClasificacion, double precio) {
+		
 		this.idIdLibro = idIdLibro;
 		this.idAutor = idAutor;
 		this.titulo = titulo;
@@ -30,7 +29,6 @@ public class Libro extends Entidad {
 		this.strFecPub = strFecPub;
 		this.strDescri = strDescri;
 		this.oClasificacion = oClasificacion;
-		this.oAutor = oAutor;
 		this.precio = precio;
 	}
 
@@ -82,13 +80,6 @@ public class Libro extends Entidad {
 	public void setoClasificacion(Clasificacion oClasificacion) {
 		this.oClasificacion = oClasificacion;
 	}
-	public Autor getoAutor() {
-		return oAutor;
-	}
-	public void setoAutor(Autor oAutor) {
-		this.oAutor = oAutor;
-	}
-	
 	public double getPrecio() {
 		return precio;
 	}

@@ -20,7 +20,7 @@ public class Cliente extends Entidad {
 	
 	public Cliente(int id, String nombre, String apellidoPat, String apellidoMat, Date fecNacimiento,
 			TipoDocumento tipoDocumento, String documento) {
-		super();
+
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidoPat = apellidoPat;

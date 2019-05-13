@@ -16,7 +16,6 @@ public class DetalleVenta extends Entidad {
 	private double monto;
 	
 	public DetalleVenta(int idVenta, int idDetVenta, int idLibro, Date fechaReg, int cantidad, double monto) {
-		super();
 		this.idVenta = idVenta;
 		this.idDetVenta = idDetVenta;
 		this.idLibro = idLibro;

@@ -12,7 +12,7 @@ public class AutorServicio {
 		this.repositorioAutor = repositorioAutor;
 	}
 	
-	public List<Autor> obtenerProductos() {
+	public List<Autor> obtenerAutores() {
 		return repositorioAutor.obtenerTodos();
 	}
 

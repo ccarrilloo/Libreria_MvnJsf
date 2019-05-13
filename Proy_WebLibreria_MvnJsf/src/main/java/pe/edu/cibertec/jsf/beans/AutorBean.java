@@ -27,7 +27,7 @@ public class AutorBean{
 	private void init() {	
 		System.out.println("Iniciando configuración de AutorBean");
 		AutorServicio autorServicio = configuracionAppBean.getAutorServicio();
-		listaAutores = autorServicio.obtenerProductos();		
+		listaAutores = autorServicio.obtenerAutores();		
 	}
 		
 	public List<Autor> getListaAutores() {
