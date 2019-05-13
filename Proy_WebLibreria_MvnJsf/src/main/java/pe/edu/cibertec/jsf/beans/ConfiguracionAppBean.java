@@ -12,9 +12,11 @@ import pe.edu.cibertec.servicio.AutorServicio;
 public class ConfiguracionAppBean {
 
 	private AutorServicio autorServicio;
+	
 	public AutorServicio getAutorServicio() {
 		return autorServicio;
 	}
+	
 	public void setAutorServicio(AutorServicio autorServicio) {
 		this.autorServicio = autorServicio;
 	}
