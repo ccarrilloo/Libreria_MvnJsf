@@ -15,10 +15,10 @@
 	<h:panelGrid columns="2">
 		
 		<h:outputText value="Nombre" />
-		<h:inputText value="#{AutorCrearBean.autor.nombre}" />
+		<h:inputText value="#{autorCrearBean.autor.strNombre}" />
 	
 		<h:outputText value="País" />
-		<h:selectOneMenu value="#{AutorCrearBean.autor.pais}">
+		<h:selectOneMenu value="#{autorCrearBean.autor.strPais}">
 			<f:selectItem itemLabel="SELECCIONAR" itemValue="0" />
 			<f:selectItem itemLabel="Perú" itemValue="1" />
 			<f:selectItem itemLabel="Colombia" itemValue="2" />
@@ -28,10 +28,10 @@
 			<f:selectItem itemLabel="Chile" itemValue="6" />
 		</h:selectOneMenu>	
 		<h:outputText value="Biografía" />
-		<h:inputText value="#{AutorCrearBean.autor.biografia}" />
+		<h:inputText value="#{autorCrearBean.autor.strBiografia}" />
 		
 	</h:panelGrid>
-	<h:commandButton action="#{AutorCrearBean.crearAutor}"
+	<h:commandButton action="#{autorCrearBean.crearAutor}"
 		value="Guardar" />
 	<h:messages />
 
