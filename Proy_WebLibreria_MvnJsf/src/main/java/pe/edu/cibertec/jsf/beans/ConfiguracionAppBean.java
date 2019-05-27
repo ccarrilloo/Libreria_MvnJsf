@@ -6,10 +6,12 @@ import javax.faces.bean.ManagedBean;
 
 import pe.edu.cibertec.repositorio.impl.RepositorioAutorMemoriaImpl;
 import pe.edu.cibertec.repositorio.impl.RepositorioLibroMemoriaImpl;
+import pe.edu.cibertec.repositorio.impl.RepositorioVentaMemoriaImpl;
 import pe.edu.cibertec.repositorio.impl.RepositorioClienteMemoriaImpl;
 
 import pe.edu.cibertec.servicio.AutorServicio;
 import pe.edu.cibertec.servicio.LibroServicio;
+import pe.edu.cibertec.servicio.VentaServicio;
 import pe.edu.cibertec.servicio.ClienteServicio;
 
 @ManagedBean(eager=true)
@@ -19,19 +21,25 @@ public class ConfiguracionAppBean {
 	private AutorServicio autorServicio;
 	private LibroServicio libroServicio;
 	private ClienteServicio clienteServicio;
+	private VentaServicio ventaServicio;
 	
+	public VentaServicio getVentaServicio() {
+		return ventaServicio;
+	}
+	public void setVentaServicio(VentaServicio ventaServicio) {
+		this.ventaServicio = ventaServicio;
+	}
+
 	public ClienteServicio getClienteServicio() {
 		return clienteServicio;
 	}
-
 	public void setClienteServicio(ClienteServicio clienteServicio) {
 		this.clienteServicio = clienteServicio;
 	}
 
 	public AutorServicio getAutorServicio() {
 		return autorServicio;
-	}
-	
+	}	
 	public void setAutorServicio(AutorServicio autorServicio) {
 		this.autorServicio = autorServicio;
 	}
@@ -39,7 +47,6 @@ public class ConfiguracionAppBean {
 	public LibroServicio getLibroServicio() {
 		return libroServicio;
 	}
-
 	public void setLibroServicio(LibroServicio libroServicio) {
 		this.libroServicio = libroServicio;
 	}
@@ -53,6 +60,7 @@ public class ConfiguracionAppBean {
 		autorServicio = new AutorServicio(new RepositorioAutorMemoriaImpl());
 		libroServicio = new LibroServicio(new RepositorioLibroMemoriaImpl());
 		clienteServicio = new ClienteServicio(new RepositorioClienteMemoriaImpl());
+		ventaServicio = new VentaServicio(new RepositorioVentaMemoriaImpl());		
 	}
 	
 }

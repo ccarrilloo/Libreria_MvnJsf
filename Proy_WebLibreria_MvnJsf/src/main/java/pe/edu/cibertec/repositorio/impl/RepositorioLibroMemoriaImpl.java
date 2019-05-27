@@ -26,6 +26,13 @@ public class RepositorioLibroMemoriaImpl implements RepositorioLibro {
 						  new Clasificacion(2,"Épico"),
 						  new Autor(1, "John Ronald Reuel Tolkien", "SudAfrica",""),
 						  50.00));
+		
+		agregar(new Libro(3,
+				  "Sangre y Fuego",						 
+				  "08/08/2018","",
+				  new Clasificacion(2,"Épico"),
+				  new Autor(3, "George Raymond Richard Martin", "Estados Unidos",""),
+				  40.00));
 	}
 
 	@Override
