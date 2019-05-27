@@ -1,9 +1,12 @@
 package pe.edu.cibertec.jsf.beans;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
+import pe.edu.cibertec.dominio.Cliente;
 import pe.edu.cibertec.repositorio.impl.RepositorioAutorMemoriaImpl;
 import pe.edu.cibertec.repositorio.impl.RepositorioLibroMemoriaImpl;
 import pe.edu.cibertec.repositorio.impl.RepositorioVentaMemoriaImpl;
@@ -51,6 +54,7 @@ public class ConfiguracionAppBean {
 		this.libroServicio = libroServicio;
 	}
 
+	
 	public ConfiguracionAppBean() {		
 		// TODO Auto-generated constructor stub
 	}

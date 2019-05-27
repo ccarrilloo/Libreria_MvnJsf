@@ -6,7 +6,7 @@ public class Venta extends Entidad {
 	private Cliente cliente;	
 	private DetalleVenta detalleVenta; 
 	private double importe;
-
+	
 	public Venta() {		
 		// TODO Auto-generated constructor stub
 	}
@@ -17,6 +17,7 @@ public class Venta extends Entidad {
 		this.cliente = cliente;
 		this.detalleVenta = detalleVenta;
 		this.importe = importe;
+		
 	}
 
 	public String getFecVenta() {

@@ -4,12 +4,14 @@ import pe.edu.cibertec.dominio.TipoDocumento;
 
 public class Cliente extends Entidad {
 	
-	private  String nombre;
-	private  String apellidoPat;
-	private  String apellidoMat;
-	private  String fecNacimiento;
-	private  TipoDocumento tipoDocumento;
-	private  String documento;
+	private String nombre;
+	private String apellidoPat;
+	private String apellidoMat;
+	private String fecNacimiento;
+	private TipoDocumento tipoDocumento;
+	private String documento;
+	//private List<Cliente> listaCliente;
+	//, List<Cliente> listaCliente
 	
 	public Cliente(int id, String nombre, String apellidoPat, String apellidoMat, String fecNacimiento,
 			TipoDocumento tipoDocumento, String documento) {
@@ -21,6 +23,7 @@ public class Cliente extends Entidad {
 		this.fecNacimiento = fecNacimiento;
 		this.tipoDocumento = tipoDocumento;
 		this.documento = documento;
+		//this.listaCliente = listaCliente;
 	}
 	
 
@@ -75,7 +78,12 @@ public class Cliente extends Entidad {
 		this.documento = documento;
 	}
 	
-	
+//	public List<Cliente> getListaCliente() {
+//		return listaCliente;
+//	}
+//	public void setListaCliente(List<Cliente> listaCliente) {
+//		this.listaCliente = listaCliente;
+//	}
 	
 	
 }
