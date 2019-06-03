@@ -1,7 +1,9 @@
 package pe.edu.cibertec.dominio;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 
+@Entity
 public class Cliente extends Entidad {
 
 	private String nombre;
