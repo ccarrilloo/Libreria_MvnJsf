@@ -3,6 +3,7 @@
 	<name>Proy_WebLibreria_MvnJsf</name>
 	<comment></comment>
 	<projects>
+		<project>Proy_WebLibreria_Jpa</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
