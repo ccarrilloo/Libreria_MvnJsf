@@ -11,5 +11,5 @@ public interface RepositorioLibro extends Repositorio<Libro>{
 //	List<Libro> obtenerTodos();
 //	
 //	Libro obtenerPorId(Integer id);
-	
+
 }
