@@ -38,6 +38,10 @@ public class Principal {
 //				String.format("id: %s, Precio: %s", 
 //						       p.getId(),p.getPrecio())));
 		
+//		RepositorioLibro repositorioLibro = new RepositorioLibroJpaImpl(em);
+//		List<Libro> listaLibros = repositorioLibro.obtenerTodos();
+//		listaLibros.forEach(p -> System.out.println(String.format("Nombre: %s", p.getAutor().getNombre())));
+		
 		
 		em.close();
 		emf.close();

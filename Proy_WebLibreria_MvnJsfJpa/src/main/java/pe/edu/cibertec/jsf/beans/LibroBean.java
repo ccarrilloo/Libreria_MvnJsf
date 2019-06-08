@@ -9,18 +9,15 @@ import javax.faces.view.ViewScoped;
 import javax.persistence.EntityManager;
 
 import pe.edu.cibertec.dominio.Libro;
-import pe.edu.cibertec.repositorio.RepositorioCliente;
 import pe.edu.cibertec.repositorio.RepositorioLibro;
-import pe.edu.cibertec.repositorio.impl.RepositorioClienteJpaImpl;
 import pe.edu.cibertec.repositorio.impl.RepositorioLibroJpaImpl;
-
 
 @ManagedBean
 @ViewScoped
 public class LibroBean {
 
 	private List<Libro> listaLibros;
-
+	
 	@ManagedProperty(value="#{configuracionAppBean}")
 	private ConfiguracionAppBean configuracionAppBean;
 
@@ -32,8 +29,7 @@ public class LibroBean {
 	private void init() {	
 		System.out.println("Iniciando configuración de LibroBean");
 		EntityManager em = configuracionAppBean.getEntityManager();
-		try {
-			
+		try {			
 			RepositorioLibro repoLibro = new RepositorioLibroJpaImpl(em);
 			listaLibros = repoLibro.obtenerTodos();
 		}
@@ -47,10 +43,10 @@ public class LibroBean {
 		return listaLibros;
 	}
 	
-	public void setListaAutores(List<Libro> listaLibros) {
+	public void setListaLibros(List<Libro> listaLibros) {
 		this.listaLibros = listaLibros;
 	}
-
+	
 	public ConfiguracionAppBean getConfiguracionAppBean() {
 		return configuracionAppBean;
 	}

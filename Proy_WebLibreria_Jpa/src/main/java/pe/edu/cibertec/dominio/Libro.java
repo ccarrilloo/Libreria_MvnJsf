@@ -91,45 +91,5 @@ public class Libro extends Entidad {
 		this.precio = precio;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Libro other = (Libro) obj;
-		if (autor == null) {
-			if (other.autor != null)
-				return false;
-		} else if (!autor.equals(other.autor))
-			return false;
-		if (clasificacion == null) {
-			if (other.clasificacion != null)
-				return false;
-		} else if (!clasificacion.equals(other.clasificacion))
-			return false;
-		if (Double.doubleToLongBits(precio) != Double.doubleToLongBits(other.precio))
-			return false;
-		if (strDescri == null) {
-			if (other.strDescri != null)
-				return false;
-		} else if (!strDescri.equals(other.strDescri))
-			return false;
-		if (strFecPub == null) {
-			if (other.strFecPub != null)
-				return false;
-		} else if (!strFecPub.equals(other.strFecPub))
-			return false;
-		if (titulo == null) {
-			if (other.titulo != null)
-				return false;
-		} else if (!titulo.equals(other.titulo))
-			return false;
-		return true;
-	}
-
-	
 
 }

@@ -12,8 +12,11 @@ import pe.edu.cibertec.dominio.Cliente;
 import pe.edu.cibertec.dominio.DetalleVenta;
 import pe.edu.cibertec.dominio.Libro;
 import pe.edu.cibertec.dominio.Venta;
-
+import pe.edu.cibertec.repositorio.RepositorioCliente;
+import pe.edu.cibertec.repositorio.RepositorioLibro;
 import pe.edu.cibertec.repositorio.RepositorioVenta;
+import pe.edu.cibertec.repositorio.impl.RepositorioClienteJpaImpl;
+import pe.edu.cibertec.repositorio.impl.RepositorioLibroJpaImpl;
 import pe.edu.cibertec.repositorio.impl.RepositorioVentaJpaImpl;
 
 @ManagedBean(name="VentaCrearBean")
@@ -24,6 +27,7 @@ public class VentaCrearBean {
 	private DetalleVenta detalleVenta;
 	private Cliente cliente;	
 	private List<Cliente> listaCliente;
+	private Libro libro;	
 	private List<Libro> listaLibro;
 	
 	@ManagedProperty(value="#{configuracionAppBean}")
@@ -32,20 +36,26 @@ public class VentaCrearBean {
 	public VentaCrearBean() {		
 		// TODO Auto-generated constructor stub
 		venta = new Venta();
-		venta.setCliente(new Cliente());
+		venta.setCliente(new Cliente());		
 		//venta.setDetalleVenta(new DetalleVenta());		
 	}
 	
-//	@PostConstruct
-//	private void init() {
-//		// TODO Auto-generated method stub
-//		ventaServicio = configuracionAppBean.getVentaServicio();	
-//		ClienteServicio clienteServicio = configuracionAppBean.getClienteServicio();
-//		listaCliente = clienteServicio.obtenerClientes();
-//		
-//		LibroServicio libroServicio = configuracionAppBean.getLibroServicio();
-//		listaLibro = libroServicio.obtenerLibros();
-//	}
+	@PostConstruct
+	private void init() {
+		// TODO Auto-generated method stub
+		EntityManager em = configuracionAppBean.getEntityManager();
+		try {
+			
+			RepositorioCliente repoCliente = new RepositorioClienteJpaImpl(em);
+			listaCliente = repoCliente.obtenerTodos();
+			
+			RepositorioLibro repoLibro = new RepositorioLibroJpaImpl(em);
+			listaLibro = repoLibro.obtenerTodos();
+		}
+		finally {
+			em.close();
+		}
+	}
 	
 	public String crearVenta() {
 		EntityManager em = configuracionAppBean.getEntityManager();
@@ -105,6 +115,13 @@ public class VentaCrearBean {
 	}
 	public void setListaLibro(List<Libro> listaLibro) {
 		this.listaLibro = listaLibro;
+	}
+
+	public Libro getLibro() {
+		return libro;
+	}
+	public void setLibro(Libro libro) {
+		this.libro = libro;
 	}
 	
 }

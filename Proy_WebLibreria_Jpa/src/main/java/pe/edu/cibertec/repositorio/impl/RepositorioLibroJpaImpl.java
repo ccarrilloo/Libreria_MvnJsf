@@ -10,7 +10,5 @@ public class RepositorioLibroJpaImpl extends RepositorioBaseJpaImpl<Libro> imple
 	public RepositorioLibroJpaImpl(EntityManager em) {
 		super(em);
 	}
-
-	
 	
 }

@@ -39,33 +39,6 @@ public class Autor extends Entidad{
 		this.biografia = biografia;
 	}
 	
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Autor other = (Autor) obj;
-		if (biografia == null) {
-			if (other.biografia != null)
-				return false;
-		} else if (!biografia.equals(other.biografia))
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		if (pais == null) {
-			if (other.pais != null)
-				return false;
-		} else if (!pais.equals(other.pais))
-			return false;
-		return true;
-	}
-	
 		
 	
 }

@@ -19,18 +19,18 @@
 		<h:outputText value="#{msjs.libro_crear_descrip}" />
 		<h:inputText value="#{LibroCrearBean.libro.strDescri}" />
 	
-		<h:outputText value="#{msjs.libro_crear_Cla}" />
-		<h:selectOneMenu value="#{LibroCrearBean.libro.clasificacion.descClasificacion}">
-			<f:selectItem itemLabel="--SELECCIONAR--" itemValue="0" />
-			<f:selectItem itemLabel="Fisión Histórica" itemValue="1" />
-			<f:selectItem itemLabel="Épico" itemValue="2" />		
-		</h:selectOneMenu>	
+		<h:outputText value="#{msjs.libro_crear_Cla}" />		
+		<h:selectOneMenu id="cboClasi" value="#{LibroCrearBean.libro.clasificacion.id}">
+		<f:selectItem itemValue="#{null}" itemLabel="-- SELECCIONAR --" />
+		<f:selectItems value="#{LibroCrearBean.listaClasificacion}" var="clasificacion" 
+			itemValue="#{clasificacion.id}" itemLabel="#{clasificacion.descClasificacion}" />		
+		</h:selectOneMenu>
 		
 		<h:outputText value="#{msjs.libro_crear_Autor}" />
-		<h:selectOneMenu value="#{LibroCrearBean.libro.autor.nombre}">
-			<f:selectItem itemLabel="--SELECCIONAR--" itemValue="0" />
-			<f:selectItem itemLabel="Mario Vargas Llosa" itemValue="Mario Vargas Llosa" />
-			<f:selectItem itemLabel="Gabriel Garcia Márquez" itemValue="Gabriel Garcia Márquez" />		
+		<h:selectOneMenu value="#{LibroCrearBean.libro.autor.id}">
+		<f:selectItem itemValue="#{null}" itemLabel="-- SELECCIONAR --" />
+		<f:selectItems value="#{LibroCrearBean.listaAutor}" var="autor" 
+			itemValue="#{autor.id}" itemLabel="#{autor.nombre}" />
 		</h:selectOneMenu>	
 		
 		<h:outputText value="#{msjs.libro_crear_precio}" />
