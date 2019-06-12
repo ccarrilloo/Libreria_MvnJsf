@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pe.edu.cibertec.repositorio.mapper.ClienteMapper">
+
+	<resultMap type="Cliente" id="rm_Cliente">
+		<result column="id" property="id" />
+		<result column="nombre" property="nombre" />
+		<result column="apellido_pat" property="apellidoPat" />		
+		<result column="apellido_mat" property="apellidoMat" />		
+		<result column="fec_nacimiento" property="fecNacimiento" />
+		<result column="tipo_documento" property="tipoDocumento" />
+		<result column="num_documento" property="documento" />
+	</resultMap>
+
+</mapper>

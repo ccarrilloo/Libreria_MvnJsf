@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="pe.edu.cibertec.repositorio.mapper.LibroMapper">
+
+	<resultMap type="Libro" id="rm_Libro">
+		<result column="id" property="id" />
+		<result column="titulo" property="titulo" />
+		<result column="descripcion" property="strDescri" />
+		<result column="fec_pub" property="strFecPub" />
+		<association property="clasificacion"
+			resultMap="pe.edu.cibertec.repositorio.mapper.ClasificacionMapper.rm_Clasificacion" />
+
+		<association property="autor"
+			resultMap="pe.edu.cibertec.repositorio.mapper.AutorMapper.rm_Autor" />
+
+	</resultMap>
+
+</mapper>
