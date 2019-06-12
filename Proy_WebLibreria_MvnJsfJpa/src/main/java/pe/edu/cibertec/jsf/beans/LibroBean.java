@@ -32,6 +32,8 @@ public class LibroBean {
 		try {			
 			RepositorioLibro repoLibro = new RepositorioLibroJpaImpl(em);
 			listaLibros = repoLibro.obtenerTodos();
+			listaLibros.forEach(p -> p.getAutor().getNombre());
+			listaLibros.forEach(p -> p.getClasificacion().getDescClasificacion());
 		}
 		finally {
 			em.close();

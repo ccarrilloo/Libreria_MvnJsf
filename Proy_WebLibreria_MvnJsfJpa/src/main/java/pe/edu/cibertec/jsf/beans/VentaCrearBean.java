@@ -24,7 +24,7 @@ import pe.edu.cibertec.repositorio.impl.RepositorioVentaJpaImpl;
 public class VentaCrearBean {
 
 	private Venta venta;
-	private DetalleVenta detalleVenta;
+	//private DetalleVenta detalleVenta;
 	private Cliente cliente;	
 	private List<Cliente> listaCliente;
 	private Libro libro;	
@@ -81,12 +81,12 @@ public class VentaCrearBean {
 		this.venta = venta;
 	}
 
-	public DetalleVenta getDetalleVenta() {
-		return detalleVenta;
-	}
-	public void setDetalleVenta(DetalleVenta detalleVenta) {
-		this.detalleVenta = detalleVenta;
-	}
+//	public DetalleVenta getDetalleVenta() {
+//		return detalleVenta;
+//	}
+//	public void setDetalleVenta(DetalleVenta detalleVenta) {
+//		this.detalleVenta = detalleVenta;
+//	}
 
 	public Cliente getCliente() {
 		return cliente;

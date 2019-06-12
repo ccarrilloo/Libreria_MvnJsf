@@ -27,40 +27,6 @@ public class ConfiguracionAppBean {
 
 	private EntityManagerFactory emf;
 	
-//	private AutorServicio autorServicio;
-//	private LibroServicio libroServicio;
-//	private ClienteServicio clienteServicio;
-//	private VentaServicio ventaServicio;
-//	
-//	public VentaServicio getVentaServicio() {
-//		return ventaServicio;
-//	}
-//	public void setVentaServicio(VentaServicio ventaServicio) {
-//		this.ventaServicio = ventaServicio;
-//	}
-//
-//	public ClienteServicio getClienteServicio() {
-//		return clienteServicio;
-//	}
-//	public void setClienteServicio(ClienteServicio clienteServicio) {
-//		this.clienteServicio = clienteServicio;
-//	}
-//
-//	public AutorServicio getAutorServicio() {
-//		return autorServicio;
-//	}	
-//	public void setAutorServicio(AutorServicio autorServicio) {
-//		this.autorServicio = autorServicio;
-//	}
-//	
-//	public LibroServicio getLibroServicio() {
-//		return libroServicio;
-//	}
-//	public void setLibroServicio(LibroServicio libroServicio) {
-//		this.libroServicio = libroServicio;
-//	}
-
-	
 	public ConfiguracionAppBean() {		
 		System.out.println("Creando instancia de ConfiguracionAppBean");
 	}
@@ -68,12 +34,7 @@ public class ConfiguracionAppBean {
 	@PostConstruct
 	public void init() {
 		System.out.println("Inicio de configuración de ConfiguracionAppBean");
-		emf = Persistence.createEntityManagerFactory("bd_libreria");
-		
-//		autorServicio = new AutorServicio(new RepositorioAutorMemoriaImpl());
-//		libroServicio = new LibroServicio(new RepositorioLibroMemoriaImpl());
-//		clienteServicio = new ClienteServicio(new RepositorioClienteMemoriaImpl());
-//		ventaServicio = new VentaServicio(new RepositorioVentaMemoriaImpl());		
+		emf = Persistence.createEntityManagerFactory("bd_libreria");	
 	}
 	
 	@PreDestroy

@@ -30,10 +30,14 @@ public class VentaBean {
 		// TODO Auto-generated method stub		
 		System.out.println("Iniciando configuración de LibroBean");
 		EntityManager em = configuracionAppBean.getEntityManager();
+		
 		try {
 			
 			RepositorioVenta repoVenta = new RepositorioVentaJpaImpl(em);
 			listaVentas = repoVenta.obtenerTodos();
+			listaVentas.forEach(p -> p.getCliente().getNombre());
+			listaVentas.forEach(p -> p.getCliente().getApellidoMat());
+			listaVentas.forEach(p -> p.getCliente().getApellidoPat());			
 		}
 		finally {
 			em.close();
