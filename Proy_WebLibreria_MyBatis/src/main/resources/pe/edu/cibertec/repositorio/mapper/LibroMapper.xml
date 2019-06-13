@@ -5,16 +5,29 @@
 <mapper	namespace="pe.edu.cibertec.repositorio.mapper.LibroMapper">
 
 	<resultMap type="Libro" id="rm_Libro">
-		<result column="id" property="id" />
+		<id column="id" property="id" />
 		<result column="titulo" property="titulo" />
 		<result column="descripcion" property="strDescri" />
 		<result column="fec_pub" property="strFecPub" />
-		<association property="clasificacion"
-			resultMap="pe.edu.cibertec.repositorio.mapper.ClasificacionMapper.rm_Clasificacion" />
-
+		<association property="clasificacion" columnPrefix="cla_"
+			resultMap="pe.edu.cibertec.repositorio.mapper.ClasificacionMapper.rm_Clasificacion" />			
+	
 		<association property="autor"
 			resultMap="pe.edu.cibertec.repositorio.mapper.AutorMapper.rm_Autor" />
 
 	</resultMap>
+
+	<select id="selectTodosLibros" resultMap="rm_Libro">
+		SELECT l.id, l.titulo, l.descripcion, l.fecha_pub, l.id_autor, a.nombre, 
+			   l.id_clasificacion as cla_id, c.descripcion as cla_descripcion
+		FROM libro l 
+		left join autor a on l.id_autor = a.id 
+		left join clasificacion c on l.id_clasificacion = c.id;
+	</select>
+
+	<insert id="insertLibro" useGeneratedKeys="true" keyProperty="id" parameterType="Libro">
+		INSERT INTO libro ( titulo, descripcion, fecha_pub, id_autor, id_clasificacion )
+		VALUES ( #{titulo}, #{descripcion}, #{fecha_pub}, #{id_autor} , #{id_clasificacion})
+	</insert>
 
 </mapper>

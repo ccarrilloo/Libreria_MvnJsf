@@ -16,4 +16,7 @@ public interface AutorMapper {
 	@Select("SELECT id, nombre, pais, biografia FROM autor")
 	List<Autor> obtenerTodas();
 	
+	void updateAutor(Autor autor);
+	
+	void deleteAutor(int id);
 }

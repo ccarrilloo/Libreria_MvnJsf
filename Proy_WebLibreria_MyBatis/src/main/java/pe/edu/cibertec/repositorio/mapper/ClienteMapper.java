@@ -7,5 +7,8 @@ public interface ClienteMapper {
 
 	void insertCliente(Cliente cliente);
 	List<Cliente> selectTodosCliente();
+	void updateCliente(Cliente cliente);
+	void deleteCliente(int id);
+	Cliente selectClientePorId(int id);
 	
 }

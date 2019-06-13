@@ -14,4 +14,13 @@
 		<result column="num_documento" property="documento" />
 	</resultMap>
 
+	<select id="selectTodosCliente" resultMap="rm_Cliente">
+		SELECT id, nombre, apellido_pat, apellido_mat, fec_nacimiento, tipo_documento, num_documento FROM cliente
+	</select>
+
+	<insert id="insertCliente" useGeneratedKeys="true" keyProperty="id" parameterType="Cliente">
+		INSERT INTO cliente (nombre, apellido_pat, apellido_mat, fec_nacimiento, tipo_documento, num_documento) 
+		VALUES (#{nombre},#{apellidoPat},#{apellidoMat},#{fecNacimiento},#{tipoDocumento},#{documento})
+	</insert>
+
 </mapper>
