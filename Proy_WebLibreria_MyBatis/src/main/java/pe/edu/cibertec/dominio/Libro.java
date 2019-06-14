@@ -2,9 +2,9 @@ package pe.edu.cibertec.dominio;
 
 public class Libro extends Entidad {
 
-	private String titulo;
-	private String strFecPub;	
+	private String titulo;	
 	private String strDescri;
+	private String strFecPub;
 	private Clasificacion clasificacion;
 	private Autor autor;
 	private double precio;
@@ -13,12 +13,12 @@ public class Libro extends Entidad {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Libro(Integer id, String titulo, String strFecPub, String strDescri, Clasificacion clasificacion, Autor autor,
+	public Libro(Integer id, String titulo, String strDescri, String strFecPub, Clasificacion clasificacion, Autor autor,
 			double precio) {
 		this.id = id;
 		this.titulo = titulo;
-		this.strFecPub = strFecPub;
 		this.strDescri = strDescri;
+		this.strFecPub = strFecPub;		
 		this.clasificacion = clasificacion;
 		this.autor = autor;
 		this.precio = precio;

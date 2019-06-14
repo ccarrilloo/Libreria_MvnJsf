@@ -26,8 +26,8 @@
 	</select>
 
 	<insert id="insertLibro" useGeneratedKeys="true" keyProperty="id" parameterType="Libro">
-		INSERT INTO libro ( titulo, descripcion, fecha_pub, id_autor, id_clasificacion )
-		VALUES ( #{titulo}, #{descripcion}, #{fecha_pub}, #{id_autor} , #{id_clasificacion})
+		INSERT INTO libro ( titulo, descripcion, fecha_pub, id_autor, id_clasificacion, PRECIO )
+		VALUES ( #{titulo}, #{strDescri}, #{strFecPub}, #{autor.id} , #{clasificacion.id}, #{precio} )
 	</insert>
 
 </mapper>

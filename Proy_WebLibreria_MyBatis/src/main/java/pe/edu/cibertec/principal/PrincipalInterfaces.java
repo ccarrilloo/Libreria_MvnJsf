@@ -14,10 +14,12 @@ import pe.edu.cibertec.dominio.Autor;
 import pe.edu.cibertec.dominio.Clasificacion;
 import pe.edu.cibertec.dominio.Cliente;
 import pe.edu.cibertec.dominio.Libro;
+import pe.edu.cibertec.dominio.Venta;
 import pe.edu.cibertec.repositorio.mapper.AutorMapper;
 import pe.edu.cibertec.repositorio.mapper.ClasificacionMapper;
 import pe.edu.cibertec.repositorio.mapper.ClienteMapper;
 import pe.edu.cibertec.repositorio.mapper.LibroMapper;
+import pe.edu.cibertec.repositorio.mapper.VentaMapper;
 
 public class PrincipalInterfaces {
 
@@ -32,7 +34,7 @@ public class PrincipalInterfaces {
 				AutorMapper am = session.getMapper(AutorMapper.class);				
 //				Autor autor = am.obtenerPorId(2);
 //				System.out.println(autor.getNombre());				
-//				Autor autorInsert = new Autor(5,"Julia Navarro","España","buena escritora");
+//				Autor autorInsert = new Autor(5,"Julia Navarro","Espaï¿½a","buena escritora");
 //				am.insertarAutor(autorInsert);
 //				session.commit();
 //				System.out.println(autorInsert.getId());				
@@ -53,15 +55,23 @@ public class PrincipalInterfaces {
 //				List<Cliente> listaCliente = clm.selectTodosCliente();
 //				listaCliente.forEach(p -> System.out.println(p.getNombre()));
 				
-				//Libro libro = new Libro(1,"Usted SA","Empresarial","03/02/2010",5,1,new Double("60.00"));
-				
-				
 				LibroMapper lm = session.getMapper(LibroMapper.class);
-				List<Libro> listaLibro = lm.selectTodosLibros();
-				listaLibro.forEach(p -> System.out.println(String.format(
-						"titulo: %s, Autor: %s, Clasificacion: %s",
-						p.getTitulo(),p.getAutor().getNombre(), p.getClasificacion().getDescClasificacion())));
+//				Libro libro = new Libro(1,"Usted SA","Empresarial","01/02/2010",
+//										new Clasificacion(4,"Datos"),
+//										new Autor(3,"","",""),new Double("60.00"));
+//				lm.insertLibro(libro);
+//				session.commit();				
+//				List<Libro> listaLibro = lm.selectTodosLibros();
+//				listaLibro.forEach(p -> System.out.println(String.format(
+//						"titulo: %s, Autor: %s, Clasificacion: %s",
+//						p.getTitulo(),p.getAutor().getNombre(), p.getClasificacion().getDescClasificacion())));
 								
+				VentaMapper vm = session.getMapper(VentaMapper.class);
+				List<Venta> listaVenta = vm.selectTodosVenta();
+				listaVenta.forEach(p -> System.out.println(String.format(
+				"id: %s, fechaVenta: %s, Nombre: %s, ApePaterno: %s",
+				p.getId(),p.getFecVenta(),p.getCliente().getNombre(), p.getCliente().getApellidoPat())));
+				
 			}
 			
 		} catch (IOException e) {
