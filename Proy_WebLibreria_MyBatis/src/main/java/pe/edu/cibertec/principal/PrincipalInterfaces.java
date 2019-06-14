@@ -53,7 +53,8 @@ public class PrincipalInterfaces {
 //				clm.insertCliente(cliInsert);
 //				session.commit();				
 //				List<Cliente> listaCliente = clm.selectTodosCliente();
-//				listaCliente.forEach(p -> System.out.println(p.getNombre()));
+//				listaCliente.forEach(p -> System.out.println(String.format("Nombre: %s, Nombre Completo: %s",
+//																			p.getNombre(),p.getNomCompleto())));
 				
 				LibroMapper lm = session.getMapper(LibroMapper.class);
 //				Libro libro = new Libro(1,"Usted SA","Empresarial","01/02/2010",
@@ -63,18 +64,18 @@ public class PrincipalInterfaces {
 //				session.commit();				
 //				List<Libro> listaLibro = lm.selectTodosLibros();
 //				listaLibro.forEach(p -> System.out.println(String.format(
-//						"titulo: %s, Autor: %s, Clasificacion: %s",
-//						p.getTitulo(),p.getAutor().getNombre(), p.getClasificacion().getDescClasificacion())));
-								
-				VentaMapper vm = session.getMapper(VentaMapper.class);
+//						"titulo: %s, Autor: %s, Clasificacion: %s, Fecha: %s, Precio: %s",
+//						p.getTitulo(),p.getAutor().getNombre(), p.getClasificacion().getDescClasificacion(),p.getStrFecPub(),p.getPrecio())));
+//								
+//				VentaMapper vm = session.getMapper(VentaMapper.class);
 				
-				Venta venta = new Venta(1,"14/06/2019",new Double("150.00"), new Cliente(3,"","","","","",""));
-				vm.insertVenta(venta);
-				session.commit();				
-				List<Venta> listaVenta = vm.selectTodosVenta();
-				listaVenta.forEach(p -> System.out.println(String.format(
-				"id: %s, fechaVenta: %s, Nombre: %s, ApePaterno: %s",
-				p.getId(),p.getFecVenta(),p.getCliente().getNombre(), p.getCliente().getApellidoPat())));
+//				Venta venta = new Venta(1,"14/06/2019",new Double("150.00"), new Cliente(3,"","","","","",""));
+//				vm.insertVenta(venta);
+//				session.commit();				
+//				List<Venta> listaVenta = vm.selectTodosVenta();
+//				listaVenta.forEach(p -> System.out.println(String.format(
+//				"id: %s, fechaVenta: %s, Nombre: %s, ApePaterno: %s",
+//				p.getId(),p.getFecVenta(),p.getCliente().getNombre(), p.getCliente().getApellidoPat())));
 				
 			}
 			

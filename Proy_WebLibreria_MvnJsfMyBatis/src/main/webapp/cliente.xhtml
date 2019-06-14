@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    template="/WEB-INF/plantillas/plantilla.xhtml">
+<ui:define name="contenido">
+	<h:form>
+	
+	<h3>#{msjs.Cliente_listar_titulo}</h3>
+	<div>		
+		<h:link outcome="cliente/crearCliente"><h:outputText value="#{msjs.Cliente_listar_lnkCrear}" /></h:link>
+	</div>
+	<h:dataTable value="#{clienteBean.listaClientes}" var="cliente">
+		<h:column>
+			<f:facet name="header">Id</f:facet>
+			#{cliente.id}
+		</h:column>
+		<h:column>
+			<f:facet name="header">#{msjs.Cliente_listar_nombre}</f:facet>
+			#{cliente.nombre}
+		</h:column>
+		<h:column>
+			<f:facet name="header">#{msjs.Cliente_listar_ApePat}</f:facet>
+			#{cliente.apellidoPat}
+		</h:column>
+		<h:column>
+			<f:facet name="header">#{msjs.Cliente_listar_ApeMat}</f:facet>
+			#{cliente.apellidoMat}
+		</h:column>
+		<h:column>
+			<f:facet name="header">#{msjs.Cliente_listar_FecNac}</f:facet>
+			#{cliente.fecNacimiento}
+		</h:column>
+		<h:column>
+			<f:facet name="header">#{msjs.Cliente_listar_TipDoc}</f:facet>
+			#{cliente.tipoDocumento}
+		</h:column>
+		<h:column>
+			<f:facet name="header">#{msjs.Cliente_listar_Doc}</f:facet>
+			#{cliente.documento}
+		</h:column>
+	</h:dataTable>
+	<br/>
+	<h:link outcome="index.xhtml">Menu</h:link>
+</h:form>
+</ui:define>
+</ui:composition>

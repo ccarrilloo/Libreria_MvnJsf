@@ -8,6 +8,16 @@ public class Cliente extends Entidad {
 	private String fecNacimiento;	
 	private String tipoDocumento;	
 	private String documento;
+	private String nomCompleto;
+	
+	
+	public String getNomCompleto() {
+		return nombre + " " + apellidoPat+" " + apellidoMat;
+	}
+
+	public void setNomCompleto(String nomCompleto) {
+		this.nomCompleto = nomCompleto;
+	}
 
 	public Cliente() {
 		// TODO Auto-generated constructor stub

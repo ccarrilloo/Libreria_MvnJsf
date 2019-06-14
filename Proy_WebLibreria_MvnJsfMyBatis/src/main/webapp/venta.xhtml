@@ -1,0 +1,53 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    template="/WEB-INF/plantillas/plantilla.xhtml">
+<ui:define name="contenido">
+	<h:form>
+	
+	<h3>#{msjs.Venta_listar_titulo}</h3>
+	<div>		
+		<h:link outcome="venta/crearVenta"><h:outputText value="#{msjs.Venta_listar_lnkCrear}" /></h:link>
+	</div>
+	<h:dataTable value="#{ventaBean.listaVentas}" var="venta">
+		<h:column>
+			<f:facet name="header">Id</f:facet>
+			#{venta.id}
+		</h:column>
+		<h:column>
+			<f:facet name="header">#{msjs.Venta_listar_fecVenta}</f:facet>
+			#{venta.fecVenta}
+		</h:column>
+		<h:column>
+			<f:facet name="header">#{msjs.Venta_listar_Cliente}</f:facet>
+			#{venta.cliente.nombre}
+		</h:column>
+		<h:column>
+			<f:facet name="header">#{msjs.Venta_listar_ApePatCliente}</f:facet>
+			#{venta.cliente.apellidoPat}
+		</h:column>
+		<h:column>
+			<f:facet name="header">#{msjs.Venta_listar_ApeMatCliente}</f:facet>
+			#{venta.cliente.apellidoMat}
+		</h:column>
+		<h:column>
+			<f:facet name="header">#{msjs.Venta_listar_Importe}</f:facet>
+			#{venta.importe}
+		</h:column>
+		<h:column>
+			<f:facet name="header">#{msjs.Venta_listar_Detalle}</f:facet>
+			<h:link outcome="venta/detalleVenta">
+				<f:param name="id" value="#{venta.id}" />
+				Ver detalle
+			</h:link>
+		</h:column>
+		
+	</h:dataTable>
+	<br/>
+	
+	<h:link outcome="index.xhtml">Menu</h:link>
+</h:form>
+
+</ui:define>
+</ui:composition>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<f:view locale="#{idiomaBean.locale}">
+<h:head>
+	<meta charset="utf-8" />
+	<title>Libreria</title>
+</h:head>
+<h:body>
+	<nav id="cabecera">
+		<h1>Tienda de libros</h1>
+		<div>
+			Seleccione el idioma
+			<h:form>
+				<h:selectOneMenu value="#{idiomaBean.idioma}"
+					onchange="submit()">
+			  		<f:selectItems value="#{idiomaBean.mapaIdiomas}" /> 
+				</h:selectOneMenu>
+			</h:form>
+		</div>
+	</nav>
+	<hr />
+	<div id="contenido">
+		<ui:insert name="contenido" />		
+	</div>
+	<hr />
+	<footer id="pie">
+		2019
+	</footer>
+</h:body>
+</f:view>
+</html>

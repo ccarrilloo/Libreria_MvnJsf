@@ -8,21 +8,22 @@
 		<id column="id" property="id" />
 		<result column="titulo" property="titulo" />
 		<result column="descripcion" property="strDescri" />
-		<result column="fec_pub" property="strFecPub" />
+		<result column="fecha_pub" property="strFecPub" />
+		<result column="PRECIO" property="precio" />
 		<association property="clasificacion" columnPrefix="cla_"
 			resultMap="pe.edu.cibertec.repositorio.mapper.ClasificacionMapper.rm_Clasificacion" />			
 	
 		<association property="autor"
 			resultMap="pe.edu.cibertec.repositorio.mapper.AutorMapper.rm_Autor" />
-
+		
 	</resultMap>
 
 	<select id="selectTodosLibros" resultMap="rm_Libro">
 		SELECT l.id, l.titulo, l.descripcion, l.fecha_pub, l.id_autor, a.nombre, 
-			   l.id_clasificacion as cla_id, c.descripcion as cla_descripcion
+			   l.id_clasificacion as cla_id, c.descripcion as cla_descripcion, l.PRECIO
 		FROM libro l 
 		left join autor a on l.id_autor = a.id 
-		left join clasificacion c on l.id_clasificacion = c.id;
+		left join clasificacion c on l.id_clasificacion = c.id
 	</select>
 
 	<insert id="insertLibro" useGeneratedKeys="true" keyProperty="id" parameterType="Libro">
