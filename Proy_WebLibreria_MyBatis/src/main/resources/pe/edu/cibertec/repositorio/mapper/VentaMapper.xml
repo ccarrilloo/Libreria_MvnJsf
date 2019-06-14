@@ -18,4 +18,9 @@
 		FROM venta v left join cliente c on v.id_cliente = c.id		
 	</select>
 
+	<insert id="insertVenta" useGeneratedKeys="true" keyProperty="id" parameterType="Venta">
+		INSERT INTO venta ( fecha_venta, importe, id_cliente )
+		VALUES ( #{fecVenta}, #{importe}, #{cliente.id} )
+	</insert>
+
 </mapper>

@@ -5,17 +5,17 @@ import java.util.List;
 public class Venta extends Entidad {
 
 	private String fecVenta;
-	private Cliente cliente;
 //	private List<DetalleVenta> listaDetalleVenta;	
 	private double importe;
-
+	private Cliente cliente;
+	
 	public Venta() {
 		// TODO Auto-generated constructor stub
 	}
 		
 	
 	//public Venta(int id,String fecVenta, Cliente cliente, List<DetalleVenta> listaDetalleVenta, double importe) {
-	public Venta(int id,String fecVenta, Cliente cliente, double importe) {
+	public Venta(int id,String fecVenta, double importe, Cliente cliente) {
 		this.id = id;
 		this.fecVenta = fecVenta;
 		this.cliente = cliente;

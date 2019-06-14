@@ -67,6 +67,10 @@ public class PrincipalInterfaces {
 //						p.getTitulo(),p.getAutor().getNombre(), p.getClasificacion().getDescClasificacion())));
 								
 				VentaMapper vm = session.getMapper(VentaMapper.class);
+				
+				Venta venta = new Venta(1,"14/06/2019",new Double("150.00"), new Cliente(3,"","","","","",""));
+				vm.insertVenta(venta);
+				session.commit();				
 				List<Venta> listaVenta = vm.selectTodosVenta();
 				listaVenta.forEach(p -> System.out.println(String.format(
 				"id: %s, fechaVenta: %s, Nombre: %s, ApePaterno: %s",
