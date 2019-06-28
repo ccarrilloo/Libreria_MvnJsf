@@ -20,31 +20,32 @@ public class Venta extends Entidad {
 	@JoinColumn(name="id_cliente")
 	private Cliente cliente;
 	
-//	@OneToMany(mappedBy="venta", cascade=CascadeType.ALL)
-//	private List<DetalleVenta> listaDetalleVenta;
-	
+	@OneToMany(mappedBy="venta", cascade=CascadeType.ALL)
+	private List<DetalleVenta> listaDetalleVenta;
+		
 	private double importe;
 
 	public Venta() {
 		// TODO Auto-generated constructor stub
 	}
 		
-	
-	//public Venta(int id,String fecVenta, Cliente cliente, List<DetalleVenta> listaDetalleVenta, double importe) {
-	public Venta(int id,String fecVenta, Cliente cliente, double importe) {
+	//public Venta(int id,String fecVenta, Cliente cliente, double importe) {
+	//public Venta(int id,String fecVenta, Cliente cliente, double importe, DetalleVenta detalleVenta) {
+	public Venta(int id,String fecVenta, Cliente cliente, double importe, List<DetalleVenta> listaDetalleVenta) {	
 		this.id = id;
 		this.fecVenta = fecVenta;
 		this.cliente = cliente;
-		//this.listaDetalleVenta = listaDetalleVenta;
+		this.listaDetalleVenta = listaDetalleVenta;
+		//this.DetalleVenta = detalleVenta;
 		this.importe = importe;
 	}
 
-//	public List<DetalleVenta> getListaDetalleVenta() {
-//		return listaDetalleVenta;
-//	}
-//	public void setListaDetalleVenta(List<DetalleVenta> listaDetalleVenta) {
-//		this.listaDetalleVenta = listaDetalleVenta;
-//	}
+	public List<DetalleVenta> getListaDetalleVenta() {
+		return listaDetalleVenta;
+	}
+	public void setListaDetalleVenta(List<DetalleVenta> listaDetalleVenta) {
+		this.listaDetalleVenta = listaDetalleVenta;
+	}
 
 	public String getFecVenta() {
 		return fecVenta;
@@ -67,5 +68,11 @@ public class Venta extends Entidad {
 		this.importe = importe;
 	}
 	
-
+//	public DetalleVenta getDetalleVenta() {
+//		return DetalleVenta;
+//	}
+//	public void setDetalleVenta(DetalleVenta detalleVenta) {
+//		DetalleVenta = detalleVenta;
+//	}
+	
 }

@@ -1,12 +1,16 @@
 package pe.edu.cibertec.jsf.beans;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import javax.persistence.EntityManager;
+
 
 import pe.edu.cibertec.dominio.Cliente;
 import pe.edu.cibertec.dominio.DetalleVenta;
@@ -20,24 +24,43 @@ import pe.edu.cibertec.repositorio.impl.RepositorioLibroJpaImpl;
 import pe.edu.cibertec.repositorio.impl.RepositorioVentaJpaImpl;
 
 @ManagedBean(name="VentaCrearBean")
-@RequestScoped
+@ViewScoped
 public class VentaCrearBean {
-
+		
 	private Venta venta;
-	//private DetalleVenta detalleVenta;
 	private Cliente cliente;	
 	private List<Cliente> listaCliente;
 	private Libro libro;	
 	private List<Libro> listaLibro;
+	private double precio;
+	private int cantidad;
+	//private List<DetalleVenta> listaDetalleVenta;
+	private	int codLibro;
+	
 	
 	@ManagedProperty(value="#{configuracionAppBean}")
 	private ConfiguracionAppBean configuracionAppBean;
-
+		
 	public VentaCrearBean() {		
-		// TODO Auto-generated constructor stub
+
 		venta = new Venta();
-		venta.setCliente(new Cliente());		
-		//venta.setDetalleVenta(new DetalleVenta());		
+		venta.setCliente(new Cliente());			
+		venta.setFecVenta(LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		//venta.setListaDetalleVenta(listaDetalleVenta);
+	}
+	
+	public void multiplicar() {				
+		if ( getPrecio() != 0.0 && getCantidad() != 0) {
+			venta.setImporte(new Double(getPrecio() * getCantidad()));
+		}	
+	}
+	
+	public void cargarPrecio() {
+		EntityManager em = configuracionAppBean.getEntityManager();
+		RepositorioLibro repoLibro = new RepositorioLibroJpaImpl(em);	
+		libro = repoLibro.obtenerPorId(getCodLibro());
+		setPrecio(libro.getPrecio());
+		
 	}
 	
 	@PostConstruct
@@ -60,8 +83,23 @@ public class VentaCrearBean {
 	public String crearVenta() {
 		EntityManager em = configuracionAppBean.getEntityManager();
 		try {
+			
+			RepositorioVenta repoVenta = new RepositorioVentaJpaImpl(em);	
+			RepositorioLibro repoLibro = new RepositorioLibroJpaImpl(em);
+			
+			DetalleVenta detalleVenta = new DetalleVenta();
+			detalleVenta.setLibro(repoLibro.obtenerPorId(getCodLibro()));
+			detalleVenta.setCantidad(getCantidad());
+			detalleVenta.setMonto(venta.getImporte());
+			detalleVenta.setVenta(venta);
+						
+			List<DetalleVenta> listaDetalleVenta = new ArrayList<>();
+			listaDetalleVenta.add(detalleVenta);
+			
+			venta.setListaDetalleVenta(listaDetalleVenta);
+			venta.setImporte(venta.getImporte());
+			
 			em.getTransaction().begin();
-			RepositorioVenta repoVenta = new RepositorioVentaJpaImpl(em);
 			repoVenta.agregar(venta);
 			em.getTransaction().commit();			
 		}
@@ -80,13 +118,6 @@ public class VentaCrearBean {
 	public void setVenta(Venta venta) {
 		this.venta = venta;
 	}
-
-//	public DetalleVenta getDetalleVenta() {
-//		return detalleVenta;
-//	}
-//	public void setDetalleVenta(DetalleVenta detalleVenta) {
-//		this.detalleVenta = detalleVenta;
-//	}
 
 	public Cliente getCliente() {
 		return cliente;
@@ -123,5 +154,35 @@ public class VentaCrearBean {
 	public void setLibro(Libro libro) {
 		this.libro = libro;
 	}
+	
+	public double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+	public int getCantidad() {
+		return cantidad;
+	}
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+//	public List<DetalleVenta> getListaDetalleVenta() {
+//		return listaDetalleVenta;
+//	}
+//	public void setListaDetalleVenta(List<DetalleVenta> listaDetalleVenta) {
+//		this.listaDetalleVenta = listaDetalleVenta;
+//	}
+
+	public int getCodLibro() {
+		return codLibro;
+	}
+
+	public void setCodLibro(int codLibro) {
+		this.codLibro = codLibro;
+	}
+	
 	
 }

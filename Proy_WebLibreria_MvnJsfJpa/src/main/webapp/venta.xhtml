@@ -21,16 +21,17 @@
 		</h:column>
 		<h:column>
 			<f:facet name="header">#{msjs.Venta_listar_Cliente}</f:facet>
-			#{venta.cliente.nombre}
+			#{venta.cliente.nomCompleto}
 		</h:column>
-		<h:column>
-			<f:facet name="header">#{msjs.Venta_listar_ApePatCliente}</f:facet>
-			#{venta.cliente.apellidoPat}
-		</h:column>
-		<h:column>
-			<f:facet name="header">#{msjs.Venta_listar_ApeMatCliente}</f:facet>
-			#{venta.cliente.apellidoMat}
-		</h:column>
+<!-- 		<h:column> -->
+<!-- 			<f:facet name="header">#{msjs.Venta_listar_Cliente}</f:facet> -->
+<!-- 			#{venta.cliente.nombre} -->
+<!-- 		</h:column> -->
+<!-- 		<h:column> -->
+<!-- 			<f:facet name="header">#{msjs.Venta_listar_ApePatCliente}</f:facet> -->
+<!-- 			#{venta.cliente.apellidoPat} -->
+<!-- 		</h:column> -->
+		
 		<h:column>
 			<f:facet name="header">#{msjs.Venta_listar_Importe}</f:facet>
 			#{venta.importe}

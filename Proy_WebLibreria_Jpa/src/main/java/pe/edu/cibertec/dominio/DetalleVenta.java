@@ -39,7 +39,6 @@ public class DetalleVenta extends Entidad {
 	public Venta getVenta() {
 		return venta;
 	}
-
 	public void setVenta(Venta venta) {
 		this.venta = venta;
 	}
@@ -47,7 +46,6 @@ public class DetalleVenta extends Entidad {
 	public Libro getLibro() {
 		return libro;
 	}
-
 	public void setLibro(Libro libro) {
 		this.libro = libro;
 	}
@@ -55,7 +53,6 @@ public class DetalleVenta extends Entidad {
 	public int getCantidad() {
 		return cantidad;
 	}
-
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
@@ -63,7 +60,6 @@ public class DetalleVenta extends Entidad {
 	public double getMonto() {
 		return monto;
 	}
-
 	public void setMonto(double monto) {
 		this.monto = monto;
 	}

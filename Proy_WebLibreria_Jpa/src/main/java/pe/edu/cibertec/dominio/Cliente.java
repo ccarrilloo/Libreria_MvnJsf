@@ -2,6 +2,7 @@ package pe.edu.cibertec.dominio;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 
 @Entity
 public class Cliente extends Entidad {
@@ -23,12 +24,23 @@ public class Cliente extends Entidad {
 	@Column(name="num_documento")
 	private String documento;
 
+	@Transient
+	private String nomCompleto;
+	
+	public String getNomCompleto() {
+		return getNombre() + " " + getApellidoPat() + " " + getApellidoMat();
+	}
+
+	public void setNomCompleto(String nomCompleto) {
+		this.nomCompleto = nomCompleto;		
+	}
+
 	public Cliente() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	public Cliente(int id, String nombre, String apellidoPat, String apellidoMat, String fecNacimiento, String tipoDocumento,
-			String documento) {
+			String documento, String nomCompleto) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidoPat = apellidoPat;
@@ -36,6 +48,7 @@ public class Cliente extends Entidad {
 		this.fecNacimiento = fecNacimiento;
 		this.tipoDocumento = tipoDocumento;
 		this.documento = documento;
+		this.nomCompleto = nomCompleto;
 	}
 
 	public String getNombre() {
@@ -80,48 +93,6 @@ public class Cliente extends Entidad {
 		this.documento = documento;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cliente other = (Cliente) obj;
-		if (apellidoMat == null) {
-			if (other.apellidoMat != null)
-				return false;
-		} else if (!apellidoMat.equals(other.apellidoMat))
-			return false;
-		if (apellidoPat == null) {
-			if (other.apellidoPat != null)
-				return false;
-		} else if (!apellidoPat.equals(other.apellidoPat))
-			return false;
-		if (documento == null) {
-			if (other.documento != null)
-				return false;
-		} else if (!documento.equals(other.documento))
-			return false;
-		if (fecNacimiento == null) {
-			if (other.fecNacimiento != null)
-				return false;
-		} else if (!fecNacimiento.equals(other.fecNacimiento))
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		if (tipoDocumento == null) {
-			if (other.tipoDocumento != null)
-				return false;
-		} else if (!tipoDocumento.equals(other.tipoDocumento))
-			return false;
-		return true;
-	}
-
-	
+		
 
 }

@@ -37,7 +37,8 @@ public class VentaBean {
 			listaVentas = repoVenta.obtenerTodos();
 			listaVentas.forEach(p -> p.getCliente().getNombre());
 			listaVentas.forEach(p -> p.getCliente().getApellidoMat());
-			listaVentas.forEach(p -> p.getCliente().getApellidoPat());			
+			listaVentas.forEach(p -> p.getCliente().getApellidoPat());
+			listaVentas.forEach(p -> p.getCliente().getNomCompleto());
 		}
 		finally {
 			em.close();
@@ -48,7 +49,6 @@ public class VentaBean {
 	public List<Venta> getListaVentas() {
 		return listaVentas;
 	}
-
 	public void setListaVentas(List<Venta> listaVentas) {
 		this.listaVentas = listaVentas;
 	}
@@ -56,7 +56,6 @@ public class VentaBean {
 	public ConfiguracionAppBean getConfiguracionAppBean() {
 		return configuracionAppBean;
 	}
-
 	public void setConfiguracionAppBean(ConfiguracionAppBean configuracionAppBean) {
 		this.configuracionAppBean = configuracionAppBean;
 	}
