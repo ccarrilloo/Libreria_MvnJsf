@@ -16,7 +16,6 @@ import pe.edu.cibertec.repositorio.impl.RepositorioLibroJpaImpl;
 
 public class Principal {
 	
-
 	static final Logger logger = LoggerFactory.getLogger(
 			Principal.class);
 

@@ -8,5 +8,6 @@ public interface ServicioLibro {
 
 	void crear(Libro libro);
 	List<Libro> obtenerTodos();
+	Libro obtenerPorId(Integer id);
 	
 }
