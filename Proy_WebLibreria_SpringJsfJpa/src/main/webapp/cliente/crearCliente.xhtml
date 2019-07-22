@@ -36,7 +36,7 @@
 			<h:commandButton action="#{ClienteCrearBean.crearCliente}"
 				value="#{msjs.cliente_crear_btnCrear}" />
 			<h:messages />
-			
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 		</h:form>
 	</ui:define>
 </ui:composition>

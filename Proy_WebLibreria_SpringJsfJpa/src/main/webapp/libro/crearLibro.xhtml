@@ -41,7 +41,7 @@
 	<h:commandButton action="#{LibroCrearBean.crearLibro}"
 		value="#{msjs.autor_crear_btnCrear}" />
 	<h:messages />
-
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 </h:form>
 </ui:define>
 </ui:composition>

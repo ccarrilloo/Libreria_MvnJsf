@@ -48,6 +48,7 @@
 	<br/>
 	
 	<h:link outcome="index.xhtml">Menu</h:link>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 </h:form>
 
 </ui:define>

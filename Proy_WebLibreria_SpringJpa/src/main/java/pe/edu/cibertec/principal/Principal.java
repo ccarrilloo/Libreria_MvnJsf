@@ -1,5 +1,7 @@
 package pe.edu.cibertec.principal;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -7,12 +9,14 @@ import javax.persistence.Persistence;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import pe.edu.cibertec.dominio.Autor;
 import pe.edu.cibertec.dominio.Cliente;
 import pe.edu.cibertec.dominio.Libro;
 import pe.edu.cibertec.repositorio.RepositorioCliente;
 import pe.edu.cibertec.repositorio.RepositorioLibro;
 import pe.edu.cibertec.repositorio.impl.RepositorioClienteJpaImpl;
 import pe.edu.cibertec.repositorio.impl.RepositorioLibroJpaImpl;
+import pe.edu.cibertec.servicio.ServicioAutor;
 
 public class Principal {
 	
@@ -43,6 +47,8 @@ public class Principal {
 //		RepositorioCliente repoCliente = new RepositorioClienteJpaImpl(em);
 //		Cliente cliente = repoCliente.obtenerPorId(3);
 //		System.out.println(cliente.getNomCompleto());
+		
+		
 		
 		em.close();
 		emf.close();

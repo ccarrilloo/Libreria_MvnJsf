@@ -11,6 +11,7 @@
 	<br/>
 	<br/>
 	<h:link outcome="/venta?faces-redirect=true">Regresar a Listar Ventas</h:link>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 	</h:form>
 </ui:define>
 </ui:composition>
