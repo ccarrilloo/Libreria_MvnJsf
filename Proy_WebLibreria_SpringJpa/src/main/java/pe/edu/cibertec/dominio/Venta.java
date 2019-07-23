@@ -16,7 +16,7 @@ public class Venta extends Entidad {
 	@Column(name="fecha_venta")
 	private String fecVenta;
 	
-	@ManyToOne(optional=false, fetch=FetchType.LAZY)
+	@ManyToOne(optional=false, fetch=FetchType.EAGER)
 	@JoinColumn(name="id_cliente")
 	private Cliente cliente;
 	

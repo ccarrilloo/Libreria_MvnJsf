@@ -11,34 +11,34 @@
 	<h:panelGrid columns="2">
 	
 		<h:outputText value="#{msjs.libro_crear_nombre}" />
-		<h:inputText value="#{LibroCrearBean.libro.titulo}" />
+		<h:inputText value="#{libroCrearBean.libro.titulo}" />
 		
 		<h:outputText value="#{msjs.libro_crear_FecPub}" />
-		<h:inputText value="#{LibroCrearBean.libro.strFecPub}" />
+		<h:inputText value="#{libroCrearBean.libro.strFecPub}" />
 		
 		<h:outputText value="#{msjs.libro_crear_descrip}" />
-		<h:inputText value="#{LibroCrearBean.libro.strDescri}" />
+		<h:inputText value="#{libroCrearBean.libro.strDescri}" />
 	
 		<h:outputText value="#{msjs.libro_crear_Cla}" />		
-		<h:selectOneMenu id="cboClasi" value="#{LibroCrearBean.libro.clasificacion.id}">
+		<h:selectOneMenu id="cboClasi" value="#{libroCrearBean.libro.clasificacion.id}">
 		<f:selectItem itemValue="#{null}" itemLabel="-- SELECCIONAR --" />
-		<f:selectItems value="#{LibroCrearBean.listaClasificacion}" var="clasificacion" 
+		<f:selectItems value="#{libroCrearBean.listaClasificacion}" var="clasificacion" 
 			itemValue="#{clasificacion.id}" itemLabel="#{clasificacion.descClasificacion}" />		
 		</h:selectOneMenu>
 		
 		<h:outputText value="#{msjs.libro_crear_Autor}" />
-		<h:selectOneMenu value="#{LibroCrearBean.libro.autor.id}">
+		<h:selectOneMenu value="#{libroCrearBean.libro.autor.id}">
 		<f:selectItem itemValue="#{null}" itemLabel="-- SELECCIONAR --" />
-		<f:selectItems value="#{LibroCrearBean.listaAutor}" var="autor" 
+		<f:selectItems value="#{libroCrearBean.listaAutor}" var="autor" 
 			itemValue="#{autor.id}" itemLabel="#{autor.nombre}" />
 		</h:selectOneMenu>	
 		
 		<h:outputText value="#{msjs.libro_crear_precio}" />
-		<h:inputText value="#{LibroCrearBean.libro.precio}" />
+		<h:inputText value="#{libroCrearBean.libro.precio}" />
 	
 	
 	</h:panelGrid>
-	<h:commandButton action="#{LibroCrearBean.crearLibro}"
+	<h:commandButton action="#{libroCrearBean.crearLibro}"
 		value="#{msjs.autor_crear_btnCrear}" />
 	<h:messages />
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

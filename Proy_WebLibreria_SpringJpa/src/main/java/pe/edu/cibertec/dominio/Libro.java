@@ -17,11 +17,11 @@ public class Libro extends Entidad {
 	@Column(name="descripcion")
 	private String strDescri;
 	
-	@ManyToOne(optional=false,fetch=FetchType.LAZY)
+	@ManyToOne(optional=false,fetch=FetchType.EAGER)
 	@JoinColumn(name="id_clasificacion")
 	private Clasificacion clasificacion;
 	
-	@ManyToOne(optional=false,fetch=FetchType.LAZY)
+	@ManyToOne(optional=false,fetch=FetchType.EAGER)
 	@JoinColumn(name="id_autor")
 	private Autor autor;
 	

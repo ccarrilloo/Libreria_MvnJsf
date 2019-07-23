@@ -2,6 +2,7 @@ package pe.edu.cibertec.servicio.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,6 +11,7 @@ import pe.edu.cibertec.dominio.Venta;
 import pe.edu.cibertec.repositorio.RepositorioVenta;
 import pe.edu.cibertec.servicio.ServicioVenta;
 
+@Service
 public class ServicioVentaImpl implements ServicioVenta {
 
 	private final RepositorioVenta repositorioVenta;

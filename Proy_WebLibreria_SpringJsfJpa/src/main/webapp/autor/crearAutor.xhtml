@@ -11,10 +11,10 @@
 	<h:panelGrid columns="2">
 		
 		<h:outputText value="#{msjs.autor_crear_otNombre}" />
-		<h:inputText value="#{AutorCrearBean.autor.nombre}" />
+		<h:inputText value="#{autorCrearBean.autor.nombre}" />
 	
 		<h:outputText value="#{msjs.autor_crear_otPais}" />
-		<h:selectOneMenu value="#{AutorCrearBean.autor.pais}">
+		<h:selectOneMenu value="#{autorCrearBean.autor.pais}">
 			<f:selectItem itemLabel="SELECCIONAR" itemValue="0" />
 			<f:selectItem itemLabel="Peru" itemValue="Peru" />
 			<f:selectItem itemLabel="Colombia" itemValue="Colombia" />
@@ -24,10 +24,10 @@
 			<f:selectItem itemLabel="Chile" itemValue="Chile" />
 		</h:selectOneMenu>	
 		<h:outputText value="#{msjs.autor_crear_otBiografia}" />
-		<h:inputText value="#{AutorCrearBean.autor.biografia}" />
+		<h:inputText value="#{autorCrearBean.autor.biografia}" />
 		
 	</h:panelGrid>
-	<h:commandButton action="#{AutorCrearBean.crearAutor}"
+	<h:commandButton action="#{autorCrearBean.crearAutor}"
 		value="#{msjs.autor_crear_btnCrear}" />
 	<h:messages />
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
